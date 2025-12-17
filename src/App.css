@@ -1,0 +1,14 @@
+:root{
+    --dim-grey: #637074ff;
+--text-color: #5c02a5;
+--bgc: #1b1b1b;
+}
+body{
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: var(--bgc);
+    color: var(--text-color);
+}
+.cardholder{
+    display: flex;
+}
