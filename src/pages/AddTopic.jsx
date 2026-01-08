@@ -6,7 +6,7 @@ import { MyAuthContext } from "../context/AuthContext";
 const AddTopic = () => {
   const [ topic, setTopic ] = useState();
   const navigate = useNavigate();
-  const {hasAccess, clearKey} = useContext(MyAuthContext)
+  const {hasAccess, clearkey} = useContext(MyAuthContext)
 
   console.log(topic)
   const handleSubmit = async (e) => {
@@ -15,7 +15,9 @@ const AddTopic = () => {
   }
 
   const handleLogout = () => {
-    clearKey()
+    console.log("Addtopic");
+    
+    clearkey()
     navigate("/")
   }
 

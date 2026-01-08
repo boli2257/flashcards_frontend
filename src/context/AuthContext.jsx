@@ -24,6 +24,7 @@ console.log(hasAccess);
 
   const verifyKey = async (key) => {
     try {
+      
       await axios.post(`${import.meta.env.VITE_API_URL}/login`, { key }, { withCredentials: true });
       setHasAccess(true);
       return true;

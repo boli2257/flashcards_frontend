@@ -7,7 +7,7 @@ const AddCard = () => {
 
   const [question, setQuestion] = useState("")
   const [answer, setAnswer] = useState("")
-  const {hasAccess, clearKey} = useContext(MyAuthContext)
+  const {hasAccess, clearkey} = useContext(MyAuthContext)
   const {id} = useParams()
   const navigate = useNavigate()
   
@@ -20,7 +20,8 @@ const AddCard = () => {
   }
 
   const handleLogout = () => {
-    clearKey()
+    console.log("Addcard");
+    clearkey()
     navigate("/")
   }
 
