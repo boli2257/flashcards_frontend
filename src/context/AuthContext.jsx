@@ -1,10 +1,7 @@
 import axios from "axios";
 import { useEffect, createContext, useState } from "react";
 
-// 1. Ez a Context objektum - ezt használod a useContext-ben
 export const MyAuthContext = createContext();
-
-// 2. Ez a Provider komponens - ezt használod a main.jsx-ben
 export const AuthProvider = ({ children }) => { 
   const [hasAccess, setHasAccess] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -12,14 +9,13 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        // Javítás: import.meta.env-et kell használni Vite-nél, nem .process.env-et
         await axios.get(`${import.meta.env.VITE_API_URL}/protected`,  { withCredentials: true });
-   
+        setHasAccess(true)
       } catch (error) {
         console.log(error);
         setHasAccess(false);
       } finally {
-        setLoading(false); // Itt hiányzott a false érték és a hívás
+        setLoading(false)
       }
     };
     checkAuth();
@@ -38,6 +34,8 @@ console.log(hasAccess);
   };
 
   const clearkey = async () => {
+    console.log(`${import.meta.env.VITE_API_URL}/logout`);
+    
     await axios.post(`${import.meta.env.VITE_API_URL}/logout`, {}, { withCredentials: true });
     setHasAccess(false);
   };

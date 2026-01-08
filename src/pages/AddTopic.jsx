@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
-import { addTopic, readTopicsOnce } from "../fireBaseBackend";
+import { addTopic } from "../fireBaseBackend";
 import { MyAuthContext } from "../context/AuthContext";
 
 const AddTopic = () => {
