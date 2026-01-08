@@ -31,7 +31,7 @@ export default function AccessKeyModal({ open, onClose, onSuccess }) {
       <Modal open={open} onClose={onClose}>
         <ModalDialog
           sx={{
-            backgroundColor: "rgba(255, 36, 36, 0.096)",
+            backgroundColor: "rgba(243, 200, 135, 1)",
             color: "white",
             border: "none",
             borderTop: "1px solid rgba(255, 143, 143, 0.322)",
@@ -39,28 +39,27 @@ export default function AccessKeyModal({ open, onClose, onSuccess }) {
           }}
         >
           <DialogTitle sx={{ color: "white" }}>
-            Titkos kulcs szükséges
+            Admin kulcs szükséges!
           </DialogTitle>
           <DialogContent sx={{ color: "white" }}>
             Add meg a kulcsot a művelet folytatásához!
           </DialogContent>
           <form onSubmit={handleSubmit}>
             <Stack spacing={2}>
-              <FormControl>
+              <FormControl id="asd">
                 <Input
+                id="input_key"
                   autoFocus
                   required
                   type="password"
-                  placeholder="Kulcs"
+                  placeholder="Írd be a kulcsot!"
                   value={key}
                   sx={{
                     color: "white",
                     width: "100%",
                     padding: "10px 20px",
-                    backgroundColor: "rgba(15, 23, 42, 1)",
+                    backgroundColor: "rgba(233, 139, 76, 1)",
                     border: "none",
-                    borderTop: "1px solid rgba(83, 83, 83, 0.322)",
-                    borderLeft: "1px solid rgba(83, 83, 83, 0.322)",
                     borderRadius: "10px"
                     
                   }}
@@ -70,7 +69,7 @@ export default function AccessKeyModal({ open, onClose, onSuccess }) {
                 />
               </FormControl>
               <Button
-                type="submit"
+                type="submit" id="submit_key"
                 sx={{
                   userSelect: "none",
                   cursor: "pointer",
@@ -78,12 +77,11 @@ export default function AccessKeyModal({ open, onClose, onSuccess }) {
                   background: "none",
                   zIndex: 0,
                   border: "none",
-                  backgroundColor: "rgba(255, 36, 36, 0.096)",
+                  backgroundColor: "rgba(189, 145, 23, 0.1)",
                   width: "100%",
                   fontWeight: "bold",
                   borderRadius: "10px",
                   outline: "none",
-                  fontVariant: "small-caps",
                   fontSize: "2rem",
                   
                 }}

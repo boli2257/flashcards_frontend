@@ -4,8 +4,6 @@ import { useEffect, createContext, useState } from "react";
 // 1. Ez a Context objektum - ezt használod a useContext-ben
 export const MyAuthContext = createContext();
 
-const API_URL = "http://localhost:8000"
-
 // 2. Ez a Provider komponens - ezt használod a main.jsx-ben
 export const AuthProvider = ({ children }) => { 
   const [hasAccess, setHasAccess] = useState(false);

@@ -9,22 +9,28 @@ const Home = () => {
   const { hasAccess } = useContext(MyAuthContext);
   const handleAddTopic = () => {
 
-      if(hasAccess){
-        navigate("/addTopic")
-      }else {
-        setOpen(true)
-      }
+    if (hasAccess) {
+      navigate("/addTopic")
+    } else {
+      setOpen(true)
+    }
 
   }
   return (
     <div className="Home">
-      <button onClick={handleAddTopic}>
-        Témakörök hozzáadása
-      </button>
-      <button onClick={() => navigate("/topics")}>Témakörök</button>
-      <AccessKeyModal open={open} onClose={()=>setOpen(false)} onSuccess={()=>navigate('/addTopic')}/>
-
-
+      <div className="homehatter">
+      <div className="szlogen">
+        <h1>Flip carddal egyszerű a tanulás</h1>
+      </div>
+      <div className="home_gombok">
+        
+        <button onClick={() => navigate("/topics")}>Témakörök</button>
+        <AccessKeyModal open={open} onClose={() => setOpen(false)} onSuccess={() => navigate('/addTopic')} />
+      </div>
+      </div>
+      <button onClick={handleAddTopic} className="hozzadasgomb">
+          Témakörök hozzáadása
+        </button>
     </div>
   );
 };

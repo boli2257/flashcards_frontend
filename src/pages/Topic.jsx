@@ -16,7 +16,7 @@ const Topic = () => {
     <div className="topics">
       {topics &&
         topics.map((obj) => (
-          <button onClick={() => navigate("/topics/" + obj.id)} key={obj.id}>
+          <button onClick={() => navigate("/topics/" + obj.id)} key={obj.id} id="tema">
             {obj.name}
           </button>
         ))}

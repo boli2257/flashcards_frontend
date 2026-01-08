@@ -1,14 +1,131 @@
 :root{
-    --dim-grey: #637074ff;
---text-color: #5c02a5;
---bgc: #1b1b1b;
+    --zold: #355834ff;
+--sotetkek: #0c0a3eff;
+--barna: #764134ff;
+--homokszinu: #bea57dff;
+--bordo: #570000ff;
+--lagyzold: #748B75;
+--bezs: #f5f5dc;
 }
 body{
     box-sizing: border-box;
+    background-color: var(--homokszinu);
     margin: 0 auto;
-    background-color: var(--bgc);
-    color: var(--text-color);
+    color: var(--barna);
 }
-.cardholder{
+.cardNumber{
+    position: absolute;
+    bottom:0;
+    left:50%;
+}
+.ReactFlipCard__container  {
+    margin-top: 10px;
+    width: 310px;
+    height: 420px;
+}
+div {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+#submit_key:hover{
+    background-color: #ad7a1b;
+    scale: 1.05;
+    transition: 0.5s;
+}
+.flashcard{
+    background-color: rgb(255, 251, 0);
+min-height: 100vh;
     display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+button{
+    border: none;
+    padding: 10px;
+    color: #f5f5dc;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #748B75;
+}
+button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    scale: 1.01;
+    transition: 0.5s;
+}
+.topics{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#tema{
+    min-width: 70px;
+    max-width: 300px;
+}
+.ArrowsHolder{
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column ;
+}
+.formDiv h1{
+    width: 300px;
+    margin: auto;
+}
+.formDiv input{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--bezs);
+    color: var(--barna);
+     margin-left: 10px;
+}
+.formDiv input::placeholder
+{
+    color: var(--barna);
+    font-size: 0.9rem;
+    
+}
+input:hover::placeholder,
+input:focus::placeholder {
+    color: transparent;
+    transition: 0.2s;
+}
+.Home{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.home_gombok{
+    display: flex;
+    justify-content: center;
+}
+.homehatter{
+    background-color: hsla(0, 0%, 37%, 0.527);
+    padding: 20px;
+    border-radius: 10px;
+}
+.hozzadasgomb{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.logoutBtn{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.szlogen{
+    color: var(--bezs);
+    text-decoration: underline;
 }
