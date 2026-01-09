@@ -3,6 +3,7 @@ import { addCard } from '../fireBaseBackend'
 import { useNavigate, useParams } from 'react-router'
 import { MyAuthContext } from '../context/AuthContext'
 import { readTopicOnce } from '../fireBaseBackend'
+import { useEffect } from 'react'
 const AddCard = () => {
 
   const [question, setQuestion] = useState("")
@@ -11,6 +12,7 @@ const AddCard = () => {
   const {id} = useParams()
   const navigate = useNavigate()
   const [topicName, setTopicName] = useState('')
+  const [cards, setCards] = useState([])
     useEffect(() => {
       readCardsOnce(id, setCards)
       readTopicOnce(id, setTopicName)

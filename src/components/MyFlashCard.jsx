@@ -10,7 +10,7 @@ import AccessKeyModal from './AccessKeyModal';
 
 const MyFlashCard = () => {
 
-  const [cards, setCards] = useState([])
+  
   const [currentIndex, setCurrentIndex] = useState(0)
   const [open, setOpen] = React.useState(false);
   const [open2, setOpen2] = React.useState(false);
@@ -18,6 +18,7 @@ const MyFlashCard = () => {
   const [flipped,setFlipped]=useState(false)
   const navigate = useNavigate();
   const { hasAccess } = useContext(MyAuthContext)
+  const [cards, setCards] = useState([])
   const { id } = useParams()
   const [topicName, setTopicName] = useState('')
   useEffect(() => {
