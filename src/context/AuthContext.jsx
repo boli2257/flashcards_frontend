@@ -6,6 +6,9 @@ export const AuthProvider = ({ children }) => {
   const [hasAccess, setHasAccess] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  console.log(hasAccess);
+  
+  
   useEffect(() => {
     const checkAuth = async () => {
       try {
@@ -20,7 +23,9 @@ export const AuthProvider = ({ children }) => {
     };
     checkAuth();
   }, []);
-console.log(hasAccess);
+  useEffect(() => {
+  console.log("hasAccess változott:", hasAccess);
+}, [hasAccess]);
 
   const verifyKey = async (key) => {
     try {

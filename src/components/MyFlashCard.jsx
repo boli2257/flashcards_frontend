@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { deleteCard, deleteTopic, readCardsOnce } from '../fireBaseBackend'
 import MyFlipCard from './MyFlipCard'
+import { readTopicOnce } from '../fireBaseBackend'
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import { MyAuthContext } from '../context/AuthContext';
 import AccessKeyModal from './AccessKeyModal';
 
 const MyFlashCard = () => {
+  const [topicName, setTopicName] = useState('')
   const [cards, setCards] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [open, setOpen] = React.useState(false);
@@ -18,6 +20,10 @@ const MyFlashCard = () => {
   const { hasAccess } = useContext(MyAuthContext)
   const { id } = useParams()
 
+  useEffect(() => {
+    readCardsOnce(id, setCards)
+    readTopicOnce(id, setTopicName)
+  }, [id])
   cards && console.log(cards[currentIndex])
   console.log(id)
   useEffect(() => {
@@ -43,7 +49,7 @@ const MyFlashCard = () => {
   }
 
   const handleDeleteCard = () => {
-    console.log(id, cards[currentIndex].id, "asdasdasdasd")
+    console.log(id, cards[currentIndex].id, "asd")
     console.log(hasAccess)
     if (hasAccess) {
       deleteCard(id, cards[currentIndex].id)
@@ -62,6 +68,7 @@ const MyFlashCard = () => {
 
   return (
     <div  style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+      <h1>{topicName || <div className="spinner"></div>}</h1>
       <div>      
         <button onClick={handleAddCard} className='addBtn'>Új kártya hozzáadása</button>
         <button onClick={handleDeleteCard} className='delBtn'>Kártya törlése</button>
@@ -81,8 +88,6 @@ const MyFlashCard = () => {
           <FaArrowRight />
         </span>
       </div>
-
-
       <div>
         <AccessKeyModal open={open} onClose={() => setOpen(false)} onSuccess={() => navigate('/addCard/' + id)} />
         <AccessKeyModal open={open2} onClose={() => setOpen2(false)} onSuccess={() => navigate('/topics/' + id)} />

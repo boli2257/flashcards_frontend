@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore"
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, query, where } from "firebase/firestore"
 import { db } from "./fireBaseApp"
 
 
@@ -62,3 +62,17 @@ export const deleteTopic = async (topicId) => {
         const docRef = doc(db, "topics", topicId)
         await deleteDoc(docRef)
 }
+export const readTopicOnce = async (id, setTopicName) => {
+  try {
+    const docRef = doc(db, "topics", id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      setTopicName(docSnap.data().name);
+    } else {
+      setTopicName("Ismeretlen témakör");
+    }
+  } catch (error) {
+    setTopicName("Hiba történt");
+  }
+};
