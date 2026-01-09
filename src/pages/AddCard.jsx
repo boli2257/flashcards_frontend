@@ -35,8 +35,8 @@ const AddCard = () => {
   return (
       <div className='formDiv'>
         <form onSubmit={handleSubmit} className='cardForm'>
-          <h1 style={{width:"100px"}}>{topicName || <div className="spinner"></div>}</h1>
-          <h3>Kártya hozzáadása</h3>
+          <h1 style={{width:"80px"}}>{topicName || <div className="spinner"></div>}</h1>
+          <h3 style={{width:"80px"}}>Kártya hozzáadása</h3>
             <input type='text' placeholder='Kérdés' required onChange={(e)=>setQuestion(e.target.value)}></input>
             <input type='text' placeholder='Válasz' required onChange={(e)=>setAnswer(e.target.value)}></input>
             <button type="submit">Hozzáadás</button>
