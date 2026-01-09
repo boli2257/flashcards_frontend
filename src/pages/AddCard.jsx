@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { addCard } from '../fireBaseBackend'
+import { addCard, readCardsOnce} from '../fireBaseBackend'
 import { useNavigate, useParams } from 'react-router'
 import { MyAuthContext } from '../context/AuthContext'
 import { readTopicOnce } from '../fireBaseBackend'
