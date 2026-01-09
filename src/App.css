@@ -24,9 +24,10 @@ body{
     height: 420px;
 }
 div {
-  word-wrap: break-word;
+  white-space: normal;
+  word-break: normal;
   overflow-wrap: break-word;
-  word-break: break-all;
+  hyphens: none;
 }
 #submit_key:hover{
     background-color: #ad7a1b;
