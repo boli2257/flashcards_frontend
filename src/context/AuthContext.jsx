@@ -3,13 +3,12 @@ import { useEffect, createContext, useState } from "react";
 
 export const MyAuthContext = createContext();
 export const AuthProvider = ({ children }) => { 
-  const [hasAccess, setHasAccess] = useState(true);
+  const [hasAccess, setHasAccess] = useState(false);
   const [loading, setLoading] = useState(true);
 
   console.log(hasAccess);
   
-  
-{/*} useEffect(() => {
+  useEffect(() => {
     const checkAuth = async () => {
       try {
         await axios.get(`${import.meta.env.VITE_API_URL}/protected`,  { withCredentials: true });
@@ -22,7 +21,7 @@ export const AuthProvider = ({ children }) => {
       }
     };
     checkAuth();
-  }, []);*/}
+  }, []);
   useEffect(() => {
   console.log("hasAccess változott:", hasAccess);
 }, [hasAccess]);
