@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   console.log(hasAccess);
   
   
-  useEffect(() => {
+ useEffect(() => {
     const checkAuth = async () => {
       try {
         await axios.get(`${import.meta.env.VITE_API_URL}/protected`,  { withCredentials: true });

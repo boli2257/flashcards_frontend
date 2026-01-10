@@ -11,7 +11,14 @@ const AddTopic = () => {
   console.log(topic)
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await addTopic(topic)
+    
+    try {
+      await addTopic(topic)
+      navigate("/topics")
+    } catch (error) {
+      console.log(error);
+      
+    }
   }
 
   const handleLogout = () => {
@@ -23,7 +30,6 @@ const AddTopic = () => {
 
   return (
     <div className="formDiv">
-      <h1>{topicName || <div className="spinner"></div>}</h1>
       <form onSubmit={handleSubmit} className="topicForm">
           <h1>Témakör hozzáadása</h1>
           <input type="text" placeholder="Témakör" required onChange={(e)=>setTopic(e.target.value)}/>
