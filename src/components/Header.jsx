@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <div className='header'>
-        <span onClick={()=>navigate("/")}><FaHouseChimney size={25}/></span>
+        <span onClick={()=>navigate("/")}><FaHouseChimney size={35}/></span>
     </div>
   )
 }

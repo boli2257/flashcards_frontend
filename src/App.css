@@ -1,7 +1,7 @@
 :root{
     --zold: #355834ff;
 --sotetkek: #0c0a3eff;
---barna: #764134ff;
+--barna: rgb(134, 75, 60);
 --homokszinu: #bea57dff;
 --bordo: #570000ff;
 --lagyzold: #748B75;
@@ -22,6 +22,8 @@ body{
     margin-top: 10px;
     width: 310px;
     height: 420px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 div {
   white-space: normal;
@@ -42,6 +44,8 @@ min-height: 100vh;
     flex-direction: column;
 }
 button{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+    transition: 0.5s;
     border: none;
     padding: 10px;
     color: #f5f5dc;
@@ -50,7 +54,7 @@ button{
     background-color: #748B75;
 }
 button:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
     scale: 1.01;
     transition: 0.5s;
 }
@@ -66,10 +70,20 @@ button:hover{
     max-width: 300px;
 }
 .ArrowsHolder{
-    gap: 30px;
+    gap: 230px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.Arrows{
+    color: #63372C;
+    transition: 0.3s;
+}
+.Arrows:hover{
+    scale: 1.1;
+    transition: 0.3s;
+    color: var(--barna);
+    
 }
 .formDiv{
     display: flex;
@@ -139,7 +153,21 @@ input:focus::placeholder {
   animation: spin 1s linear infinite;
   margin: 20px auto; /* középre */
 }
-
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+.kartyaadd{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputhozzaadas{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.kartyatema{
+    display: flex;
+    justify-content: center;
 }

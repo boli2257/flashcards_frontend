@@ -66,7 +66,11 @@ const MyFlashCard = () => {
       setOpen3(true)
     }
   }
-
+const handleLogout = () => {
+    console.log("Addcard");
+    clearkey()
+    navigate("/")
+  }
   return (
     <div  style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
       <h1>{topicName || <div className="spinner"></div>}</h1>
@@ -82,11 +86,11 @@ const MyFlashCard = () => {
     
       <div className='ArrowsHolder'>
         <span onClick={swipeRight} className='Arrows'>
-          <FaArrowLeft />
+          <FaArrowLeft size={25}/>
         </span>
 
         <span onClick={swipeLeft} className='Arrows'>
-          <FaArrowRight />
+          <FaArrowRight size={25}/>
         </span>
       </div>
       <div>
@@ -94,6 +98,7 @@ const MyFlashCard = () => {
         <AccessKeyModal open={open2} onClose={() => setOpen2(false)} onSuccess={() => navigate('/topics/' + id)} />
         <AccessKeyModal open={open3} onClose={() => setOpen3(false)} onSuccess={() => navigate('/topics')} />
       </div>
+      {hasAccess && <button className="logoutBtn" onClick={handleLogout}>Kilépés admin módból</button>}
     </div>
   )
 }
